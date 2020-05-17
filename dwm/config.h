@@ -82,6 +82,11 @@ static const char *shut[] = { "shut",  NULL };
 static const char *brightup[]   = { "doas", "bup",  NULL };
 static const char *brightdown[]   = { "doas", "bdown",  NULL };
 
+/* cmus */
+static const char *plyrnext[]   = { "cmus-remote", "-n",  NULL };
+static const char *plyrprev[]   = { "cmus-remote", "-r",  NULL };
+static const char *plyrplay[]   = { "cmus-remote", "-u",  NULL };
+
 /* lock */
 static const char *lock[]   = { "xset", "s", "activate",  NULL };
 
@@ -96,6 +101,9 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
 	{ 0,                            XF86XK_MonBrightnessUp, spawn,          {.v = brightup } },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,          {.v = brightdown  } },
+	{ 0,                            XF86XK_AudioNext,        spawn, {.v = plyrnext } },
+	{ 0,                            XF86XK_AudioPrev,        spawn, {.v = plyrprev } },
+	{ 0,                            XF86XK_AudioPlay,        spawn, {.v = plyrplay } },
 	{ MODKEY|ShiftMask,             XK_Delete,  spawn,         {.v = lock } }, 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
