@@ -11,20 +11,20 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hermit:pixelsize=11:antialias=true:autohint=true" };
-static const char col_gray1[]       = "#000000";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#000000";
-static const char col_cyan[]        = "#84a0c6";
+static const char col_gray1[]       = "#696969";
+static const char col_gray2[]       = "#000000";
+static const char col_gray3[]       = "#c6c8d1";
+static const char col_gray4[]       = "#696969";
+static const char col_cyan[]        = "#e0e0e0";
 static const char col_black[]       = "#000000";
 static const char col_red[]         = "#ff0000";
 static const char col_yellow[]      = "#ffff00";
 static const char col_white[]       = "#ffffff";
-
+#define NUMCOLORS         4
 static const char *colors[][3]      = {
 	/*					fg         bg          border   */
-	[SchemeNorm] =	 { col_gray3, col_gray1,  col_gray2 },
-	[SchemeSel]  =	 { col_gray4, col_cyan,   col_cyan },
+	[SchemeNorm] =	 { col_gray4, col_gray2,  col_gray2 },
+	[SchemeSel]  =	 { col_gray3, col_gray2,   col_gray2 },
 	[SchemeWarn] =	 { col_black, col_yellow, col_red },
 	[SchemeUrgent]=	 { col_white, col_red,    col_red },
 };
