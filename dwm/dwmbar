@@ -1,0 +1,24 @@
+#!/bin/bash
+vol(){
+    vol=$(pulsemixer --get-volume | awk '{print $1}')
+	echo -e "\x01vol \x02$vol%"
+}
+
+bat() {
+	power=$(cat /sys/class/power_supply/BAT0/capacity)
+	echo -e "\x01bat \x02$power%"
+}
+
+dte() {
+    dte=$(date +"%A, %B %d")
+    echo -e "\x01date \x02$dte"
+}
+
+tie() {
+    tme=$(date +"%I:%M %p")
+    echo -e "\x01time \x02$tme"
+}
+while true; do
+    xsetroot -name "$(vol) $(bat) $(tie) $(dte)"
+    sleep 3
+done
