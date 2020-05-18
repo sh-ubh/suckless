@@ -1,22 +1,22 @@
 #!/bin/bash
 vol(){
     vol=$(pulsemixer --get-volume | awk '{print $1}')
-	echo -e "\x01vol \x02$vol%"
+	printf "%s" "vol ^c#c6c8d1^$vol%^d^"
 }
 
 bat() {
 	power=$(cat /sys/class/power_supply/BAT0/capacity)
-	echo -e "\x01bat \x02$power%"
+	printf "%s" "bat ^c#c6c8d1^$power%^d^"
 }
 
 dte() {
     dte=$(date +"%A, %B %d")
-    echo -e "\x01date \x02$dte"
+    printf "%s" "date ^c#c6c8d1^$dte^d^"
 }
 
 tie() {
     tme=$(date +"%I:%M %p")
-    echo -e "\x01time \x02$tme"
+    printf "%s" "time ^c#c6c8d1^$tme^d^"
 }
 while true; do
     xsetroot -name "$(vol) $(bat) $(tie) $(dte)"
