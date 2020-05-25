@@ -75,6 +75,11 @@ static const char *shut[] = { "shut",  NULL };
 static const char *brightup[]   = { "doas", "bup",  NULL };
 static const char *brightdown[]   = { "doas", "bdown",  NULL };
 
+/* cmus */
+static const char *plyrnext[]   = { "cmus-remote", "-n",  NULL };
+static const char *plyrprev[]   = { "cmus-remote", "-r",  NULL };
+static const char *plyrplay[]   = { "cmus-remote", "-u",  NULL };
+
 /* lock */
 static const char *lock[]   = { "xset", "s", "activate",  NULL };
 
@@ -89,6 +94,9 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
 	{ 0,                            XF86XK_MonBrightnessUp, spawn,          {.v = brightup } },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,          {.v = brightdown  } },
+	{ 0,                            XF86XK_AudioNext,        spawn, {.v = plyrnext } },
+	{ 0,                            XF86XK_AudioPrev,        spawn, {.v = plyrprev } },
+	{ 0,                            XF86XK_AudioPlay,        spawn, {.v = plyrplay } },
 	{ MODKEY|ShiftMask,             XK_Delete,  spawn,         {.v = lock } }, 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -97,14 +105,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } },
-	{ MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_l,      incrogaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+	{ MODKEY|Mod1Mask,              XK_h,      incrgaps,       {.i = +1 } },
+	{ MODKEY|Mod1Mask,              XK_l,      incrgaps,       {.i = -1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_l,      incrogaps,      {.i = -1 } },
+	{ MODKEY|Mod1Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } },
+	{ MODKEY|Mod1Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
+	{ MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } },
 	{ MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } },

@@ -1,6 +1,6 @@
 /* user and group to drop privileges to */
-static const char *user  = "nobody";
-static const char *group = "nogroup";
+static const char *user  = "fd0e";
+static const char *group = "fd0e";
 
 static const char *colorname[NUMCOLS] = {
 	[INIT] =   "black",     /* after initialization */
@@ -21,4 +21,4 @@ static const char * text_color = "#a8fffe";
 static const char * font_name = "fixed";
 
 /* time in seconds before the monitor shuts down */
-static const int monitortime = 5;
+static const int monitortime = 3;
